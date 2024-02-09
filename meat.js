@@ -1,3 +1,120 @@
+var settingsSantize = {
+    allowedTags: [ 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol',
+    'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'br', 'div',
+    'table', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre', 'iframe','marquee','button','input'
+    ,'details','summary','progress','meter','font','h1','h2','span','select','option','abbr',
+    'acronym','adress','article','aside','bdi','bdo','big','center','site',
+    'data','datalist','dl','del','dfn','dialog','dir','dl','dt','fieldset',
+    'figure','figcaption','header','ins','kbd','legend','mark','nav',
+    'optgroup','form','q','reveal','rp','rt','ruby','s','sample','section','small',
+    'sub','sup','template','textarea','tt','u'],
+  allowedAttributes: {
+    a: [ 'href', 'name', 'target' ],
+    p:['align'],
+    table:['align','border','bgcolor','cellpadding','cellspadding','frame','rules','width'],
+    tbody:['align','valign'],
+    tfoot:['align','valign'],
+    td:['align','colspan','headers','nowrap'],
+    th:['align','colspan','headers','nowrap'],
+    textarea:['cols','dirname','disabled','placeholder','maxlength','readonly','required','rows','wrap'],
+    pre:['width'],
+    ol:['compact','reversed','start','type'],
+    option:['disabled'],
+    optgroup:['disabled','label','selected'],
+    legend: ['align'],
+    li:['type','value'],
+    hr:['align','noshade','size','width'],
+    fieldset:['disabled'],
+    dialog:['open'],
+    dir:['compact'],
+    bdo:['dir'],
+    div:['class'],
+    marquee:['behavior','bgcolor','direction','width','height','loop'],
+    button: ['disabled'],
+    input:['value','type','disabled','maxlength','max','min','placeholder','readonly','required'],
+    details:['open'],
+    div:['align'],
+    progress:['value','max'],
+    meter:['value','max','min','optimum','low','high'],
+    font:['size','family','color'],
+    select:['disabled','multiple','require'],
+    ul:['type','compact'],  
+    "*":['hidden','spellcheck','title','contenteditable','data-style']
+  },
+  selfClosing: [ 'img', 'br', 'hr', 'area', 'base', 'basefont', 'input', 'link', 'meta' , 'wbr'],
+  allowedSchemes: [ 'http', 'https', 'ftp', 'mailto', 'data' ],
+  allowedSchemesByTag: {},
+  allowedSchemesAppliedToAttributes: [ 'href', 'src', 'cite' ],
+  allowProtocolRelative: true
+} 
+  // Code by ItzCrazyScout and 'HOST'
+
+function emojify(txt){
+    return txt.replace(/:(bonzi|evil|pink|earth|globe|sad|doggis|program|swag|flip):/g,"<img src=\"/img/emoji/$1.png\">")
+}
+
+function markup(text){
+    if(text.startsWith("++")){
+        return text.slice(2)
+    }
+    text = text.replace(/%%%%/g,"<br>")
+    text = text.replace(/\*\*(.*?)\*\*/g,"<b>$1</b>")
+    text = text.replace(/\*(.*?)\*/g,"<i>$1</i>")
+    text = text.replace(/\~\~(.*?)\~\~/g,"<s>$1</s>")
+    text = text.replace(/`(.*?)`/g,"<code>$1</code>")
+    text = text.replace(/(<br>|^)>(.*?)(<br>|$)/g,"$1<div data-style=\"quote\">$2</div>")
+    return text
+}
+
+var settingsSantize = {
+    allowedTags: [ 'h3', 'h4', 'h5', 'h6', 'blockquote', 'p', 'a', 'ul', 'ol',
+    'nl', 'li', 'b', 'i', 'strong', 'em', 'strike', 'code', 'hr', 'br', 'div',
+    'table', 'thead', 'caption', 'tbody', 'tr', 'th', 'td', 'pre', 'iframe','marquee','button','input'
+    ,'details','summary','progress','meter','font','h1','h2','span','select','option','abbr',
+    'acronym','adress','article','aside','bdi','bdo','big','center','site',
+    'data','datalist','dl','del','dfn','dialog','dir','dl','dt','fieldset',
+    'figure','figcaption','header','ins','kbd','legend','mark','nav',
+    'optgroup','form','q','reveal','rp','rt','ruby','s','sample','section','small',
+    'sub','sup','template','textarea','tt','u'],
+  allowedAttributes: {
+    a: [ 'href', 'name', 'target' ],
+    p:['align'],
+    table:['align','border','bgcolor','cellpadding','cellspadding','frame','rules','width'],
+    tbody:['align','valign'],
+    tfoot:['align','valign'],
+    td:['align','colspan','headers','nowrap'],
+    th:['align','colspan','headers','nowrap'],
+    textarea:['cols','dirname','disabled','placeholder','maxlength','readonly','required','rows','wrap'],
+    pre:['width'],
+    ol:['compact','reversed','start','type'],
+    option:['disabled'],
+    optgroup:['disabled','label','selected'],
+    legend: ['align'],
+    li:['type','value'],
+    hr:['align','noshade','size','width'],
+    fieldset:['disabled'],
+    dialog:['open'],
+    dir:['compact'],
+    bdo:['dir'],
+    div:['class'],
+    marquee:['behavior','bgcolor','direction','width','height','loop'],
+    button: ['disabled'],
+    input:['value','type','disabled','maxlength','max','min','placeholder','readonly','required'],
+    details:['open'],
+    div:['align'],
+    progress:['value','max'],
+    meter:['value','max','min','optimum','low','high'],
+    font:['size','family','color'],
+    select:['disabled','multiple','require'],
+    ul:['type','compact'],  
+    "*":['hidden','spellcheck','title','contenteditable','data-style']
+  },
+  selfClosing: [ 'img', 'br', 'hr', 'area', 'base', 'basefont', 'input', 'link', 'meta' , 'wbr'],
+  allowedSchemes: [ 'http', 'https', 'ftp', 'mailto', 'data' ],
+  allowedSchemesByTag: {},
+  allowedSchemesAppliedToAttributes: [ 'href', 'src', 'cite' ],
+  allowProtocolRelative: true
+} 
 const log = require("./log.js").log;
 const Ban = require("./ban.js");
 const Utils = require("./utils.js");
@@ -141,8 +258,89 @@ let userCommands = {
         });
     },
     "youtube": function(vidRaw) {
+
+			if(vidRaw.includes("\"")){
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
+			if(vidRaw.includes("'")){ 
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
         var vid = this.private.sanitize ? sanitize(vidRaw) : vidRaw;
         this.room.emit("youtube", {
+            guid: this.guid,
+            vid: vid
+        });
+    },
+    "video": function(vidRaw) {
+
+			if(vidRaw.includes("\"")){
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
+			if(vidRaw.includes("'")){ 
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
+        var vid = this.private.sanitize ? sanitize(vidRaw) : vidRaw;
+        this.room.emit("video", {
+            guid: this.guid,
+            vid: vid
+        });
+    },
+    "image": function(vidRaw) {
+
+			if(vidRaw.includes("\"")){
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
+			if(vidRaw.includes("'")){ 
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
+        var vid = this.private.sanitize ? sanitize(vidRaw) : vidRaw;
+        this.room.emit("image", {
+            guid: this.guid,
+            vid: vid
+        });
+    },
+    "iframe": function(vidRaw) {
+
+			if(vidRaw.includes("\"")){
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
+			if(vidRaw.includes("'")){ 
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
+        var vid = this.private.sanitize ? sanitize(vidRaw) : vidRaw;
+        this.room.emit("iframe", {
             guid: this.guid,
             vid: vid
         });
@@ -188,13 +386,22 @@ let userCommands = {
                     target = n;
                 }
             });
+            if (target.getIp() == "::1") {
+                Ban.removeBan(target.getIp());
+            } else if (target.getIp() == "::ffff:127.0.0.1") {
+                Ban.removeBan(target.getIp());
+            } else {
+                if (target.private.runlevel > 2 && this.getIp() != "::1" && this.getIp() != "::ffff:127.0.0.1") {
+                    return;
+                }
+                Ban.addBan(target.getIp(), 24 * 3600, "You got banned.");
                 target.socket.emit("ban", {
-                    reason: "You got banned.",
+                    reason: data.reason,
                 });
                 target.disconnect();
-                target.socket.disconnect();
+            }
         } else {
-            this.socket.emit("alert", "The user you are trying to kick left. Get dunked on nerd");
+            this.socket.emit("alert", "The user you are trying to ban left. Get dunked on nerd");
         }
     },
   "unban": function(ip) {
@@ -237,13 +444,19 @@ let userCommands = {
     "asshole": function() {
         this.room.emit("asshole", {
             guid: this.guid,
-            target: sanitize(Utils.argsString(arguments))
+            target: sanitize(Utils.argsString(arguments)+"",settingsSantize)
         });
     },
     "owo": function() {
         this.room.emit("owo", {
             guid: this.guid,
-            target: sanitize(Utils.argsString(arguments))
+            target: sanitize(Utils.argsString(arguments)+"",settingsSantize)
+        });
+    },
+    "uwu": function() {
+        this.room.emit("uwu", {
+            guid: this.guid,
+            target: sanitize(Utils.argsString(arguments)+"",settingsSantize)
         });
     },
     "triggered": "passthrough",
@@ -263,7 +476,7 @@ let userCommands = {
             return;
 
         let name = argsString || this.room.prefs.defaultName;
-        this.public.name = this.private.sanitize ? sanitize(name) : name;
+        this.public.name = this.private.sanitize ? sanitize(name+"",settingsSantize) : name;
         this.room.updateUser(this);
     },
     "pitch": function(pitch) {
@@ -454,17 +667,23 @@ class User {
 
         log.info.log('debug', 'talk', {
             guid: this.guid,
-            text: data.text
+            text: data.text,
+            say:sanitize(data.text,{allowedTags: []})
         });
 
         if (typeof data.text == "undefined")
             return;
-
-        let text = this.private.sanitize ? sanitize(data.text) : data.text;
+        let text;
+        if(this.room.rid.startsWith('js-')){
+            text = data.text
+        }else{
+            text = this.private.sanitize ? sanitize(data.text+"",settingsSantize) : data.text;
+        }
         if ((text.length <= this.room.prefs.char_limit) && (text.length > 0)) {
             this.room.emit('talk', {
                 guid: this.guid,
-                text: text
+                text: text,
+                say: sanitize(text,{allowedTags: []})
             });
         }
     }
