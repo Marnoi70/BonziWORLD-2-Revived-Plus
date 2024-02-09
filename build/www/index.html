@@ -2,15 +2,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>BonziWORLD 2 - Third Party Edition</title>
+	<title>BonziWORLD 2: Revived+</title>
 	<meta charset="utf-8" />
 	<meta content="">
     <script src="https://cdn.jsdelivr.net/npm/howler@2.2.3/dist/howler.min.js"></script>
   <meta property="og:type" content="website"><meta property="og:site_name" content="BonziWORLD 2">
   <meta property="og:keywords" content="BonziWORLD 2, bonziworld-two, BonziWorld 2, BonziWORLD Two, bonziworld two, BonziWORLD, bonziworld, bwr, BWR, BonziWorld Revived, Bonziworld"><meta data-react-helmet="true" charset="utf-8">
-  <meta data-react-helmet="true" property="og:title" content="BonziWORLD 2">
-  <meta data-react-helmet="true" property="og:description" content="Welcome to BonziWORLD 2! Please don't break the rules in BonziWORLD 2 or else we will kick or ban you. Also, before you start being on BonziWORLD 2, there's a README to look at. This site is for users who must be 13 years old.">
-  <meta data-react-helmet="true" name="description" content="Welcome to BonziWORLD 2! Please don't break the rules in BonziWORLD 2 or else we will kick or ban you. Also, before you start being on BonziWORLD 2, there's a README to look at. This site is for users who must be 13 years old.">
+  <meta data-react-helmet="true" property="og:title" content="BonziWORLD 2: Revived+">
+  <meta data-react-helmet="true" property="og:description" content="Welcome to BonziWORLD 2 Revived+! The official revival of BonziWORLD-Two.GA! BonziWORLD 2 Revived+ is a memey BonziBUDDY chat site with no viruses at all. It is fun to use and it also has rules. Chat, watch videos, record, and many others!">
+  <meta data-react-helmet="true" name="description" content="Welcome to BonziWORLD 2 Revived+! The official revival of BonziWORLD-Two.GA! BonziWORLD 2 Revived+ is a memey BonziBUDDY chat site with no viruses at all. It is fun to use and it also has rules. Chat, watch videos, record, and many others!">
   <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
@@ -66,8 +66,8 @@
 
 		
 		<table id="chat_bar"><tr>
-			<td id="chat_send">send</td>
-			<td id="chat_message_cont"><input id="chat_message" type="text" placeholder="Enter a message"></td>
+			<td id="chat_send" onclick="saveMemory();wiiGo()" oncontextmenu="document.getElementById('page_history').style.display = 'block';return false;">send</td>
+			<td id="chat_message_cont"><input id="chat_message"  onclick="wiiClick()" type="text" placeholder="Enter a message" onkeypress="typeKeyb()"></td>
 			<td id="chat_tray">
 				<div id="btn_tile" class="tray_btn"></div>
 			</td>
@@ -80,7 +80,7 @@
 			<div id="login_card" style="display:none">
 				<input id="login_name" type="text" placeholder="Nickname">
 				<input id="login_room" type="text" placeholder="Room ID (Optional)">
-				<div id="login_go"></div>
+				<div id="login_go" onclick="login();wiiGo();"></div>
 				<div id="login_error" style="display:none"></div>
 			</div>
 			<div id="login_load">loading</div>
@@ -91,10 +91,13 @@
 			<div id="error_cont" class="message_cont">
 				<img src="./img/error/logo.png"><br>
 				<br>
-				<h1>BonziWORLD.exe has encountered an error and needs to close.</h1><br>
+				<h1>BonziWORLD 2 Revived+.exe has encountered an error and needs to close.</h1><br>
 				Nah, but seriously there was an error and you got disconnected from the server. Chances are, your internet just died out for a brief moment or your device went to sleep. Otherwise the server just screwed up.<br>
 				<br>
 				Try and reload the page. If that doesn't work and your internet is okay, then panic. We'll probably be back up Soon&trade; though.<br>
+				<br>
+				The server probably restarted. If it crashed, please mention ItzCrazyChace in our Discord server. <br>
+				Copyright &copy; 2024 ItzCrazyChace's Server - All rights reserved. BonziWORLD is a trademark of Malwaresoft.<br>
 				<br>
 				<a href="#" onClick="window.location.reload()">Reload?</a><br>
 				<br>
@@ -120,7 +123,7 @@
 				<br>
 				<h1>You got kicked!</h1><br>
 				<br>
-				<b>Why? </b><span id="ban_reason"></span><br>
+				<b>Why? </b><span id="kick_reason"></span><br>
 			</div>
 		</div>
 
@@ -128,10 +131,10 @@
 			<div id="unsupp_cont" class="message_cont">
 				<img src="./img/error/logo.png"><br>
 				<br>
-				<h1>BonziWORLD cannot run on this platform.</h1><br>
-				Unfortunately, BonziWORLD cannot run in this browser for the following reasons:<br>
+				<h1>BonziWORLD 2 Revived+ cannot run on this platform.</h1><br>
+				Unfortunately, BW2R+ cannot run in this browser for the following reasons:<br>
 				<ul id="unsupp_reasons"></ul>
-				You can try to download a BonziWORLD app that works on your device, or update your browser.
+				You can update your operating system or browser version if you can.
 				<div id="login_apps" class="app_showcase"></div>
 			</div>
 		</div>
@@ -145,5 +148,19 @@
 
 	<ad></ad>
 
+	<script>
+var textMemory = [];
+function saveMemory(){textMemory.push(document.getElementById("chat_message").value);document.getElementById("speakText3").innerHTML = textMemory.length};
+function sayMemory(a){socket.emit("talk", {text:textMemory.at(a)})};
+function sayMemoryAlt(a){sayMemory(document.getElementById("speakText2").value)};
+function closeMemoryBox(){document.getElementById("page_history").style.display = "none";};
+setInterval(function(){if(socket.disconnected === true){var bonziP = usersKeys; bonziP.forEach(bonzik => bonzis[bonzik].deconstruct());document.getElementById("page_error").style.display = "none";socket=io("http://78.63.40.199:2096");login()}}, 1000)
+setInterval(function(){document.getElementById("page_error").style.display = "none";}, 100);
+
+var keySounds = ["/assets/sfx/key1.mp3","/assets/sfx/key3.mp3"];
+function wiiGo(){var kpo = new Audio("/assets/sfx/go.mp3");kpo.play()}
+function wiiClick(){var kpo = new Audio("/assets/sfx/select.mp3");kpo.play()}
+function typeKeyb(){var kpo = new Audio(keySounds[Math.floor(Math.random()*keySounds.length)]);kpo.play()}
+</script>
 </body>
 </html>
