@@ -441,6 +441,103 @@ let userCommands = {
         this.public.color = "pope";
         this.room.updateUser(this);
     },
+    "wtf":function(text){
+        var wtf = 
+        ['i cut a hole in my computer so i can fuck it',
+        'i hate minorities',
+        'i said /godmode password and it didnt work',
+        'i like to imagine i have sex with my little pony characters',
+        'ok yall are grounded grounded grounded grounded grounded grounded grounded grounded grounded for 64390863098630985 years go to ur room',
+        'i like to eat dog crap off the ground',
+        'i can use inspect element to change your name so i can bully you',
+        'i can ban you, my dad is seamus', //offensive past name for techguynum2005
+        'why do woman reject me, i know i masturbate in public and dont shower but still',
+        'put your dick in my nose and lets have nasal sex',
+        'my cock is 6 ft so ladies please suck it',
+	'I just paid 1000 dollars for damn fucking stand cause I love Apple products so much',
+        'I am Andrej Akan from Collab VM, I am a forkie who loves to destroy Windows with regedit and claim that I live in Pakistan although I actulally live in Croatia.',
+        'Hi I am vacbedlover want to show my sexual fetish by making VM to show stupid BSDM shit, catgirl shit, vacbed and install North Korean shits on VM. I juse keep evading ban on Collab VM to act like a forkie.',
+	"please make pope free",
+	"whats that color",
+	"i listen to baby from justin bieber",
+	"i watch numberblocks",
+	"i watch doodland and now people are calling me a doodfag",
+	"i watch bfdi and now people are calling me a objectfag",
+	"i post klasky csupo effects and now people are calling me a logofag",
+	"i inflate people, and body inflation is my fetish.",
+	"i installed BonziBUDDY on my pc and now i have a virus",
+	"i deleted system32",
+	"i flood servers, and that makes me cool.",
+	"i still use the wii u&trade;",
+	"i used homebrew on my nintendo switch and i got banned",
+	"i bricked my wii",
+	"muda muda muda muda!",
+	"i am going to post inflation videos because, remember: \"I inflate people and inflation is my fetish.\"",
+	"i copy other people's usernames",
+	"i use collaborative virtual machine to install malware",
+	"i use microsoft agent scripting helper for fighting videos against innocent people that did nothing wrong by just friendly commenting",
+	"i use microsoft agent scripting helper for gofag videos",
+	"i use hotswap for my xbox 360",
+	"i boycotted left 4 dead 2",
+	"CAN U PLZ UNBAN ME PLZ PLZ PLZ PLZ PLZ PLZ PLZ PLZ",
+	"I made The Rebellion of SeamusMario55&trade;",
+	"I like Unbojih",
+	"ItzCrazyScout, No! More like.... ekfheiophjeodxenwobifuodhndoxnwsiohbdeiowdhn2werifhwefief! He banned euhdeioqwdheiwohjixzojqsioh r23oipwshnwq! End of rant.", //offensive past name for techguynum2005
+	"i play left 4 dead games 24/7",
+	"i am so cool. i shit on people, add reactions  that make fun of users on discord, and abuse my admin powers. i am really so cool.",
+	"This product will not operate when connected to a device which makes unauthorized copies. Please refer to your instruction booklet for more information.",
+	"hey medic i like doodland",
+	"i installed windows xp on my real computer",
+	"i am whistler and i like to say no u all the time",
+	"i like to give my viewers anxiety",
+	"how to make a bonziworld server?",
+	"shock, blood loss, infection; oh ho ho ho ho, i love stabbing. i feel tres bon!",
+	"prego.",
+	"oh you're approaching me!",
+	"MUTED! HEY EVERYONE LOOK AT ME I SAY MUTED IN ALL CAPS WHEN I MUTE SOMEONE LMAO",
+	"i like loliest huhytre",
+	"can you boost my server? no? you're mean! >:(",
+	"no u",
+	"OH OH OH OH OH OH! JOESPH JUDGE! HOW DARE YOU SHUT DOWN BONZIWORLD?! THATS It! YOU'RE GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED GROUNDED FOR 239805479837389274328943729832749382743298 YEARS!",
+	"numberblocks is my fetish",
+	"i post random gummibar videos on bonziworld",
+	"i support meatballmars",
+	"PLEASE GIVE THIS VIDEO LIKES!!!!! I CANNOT TAKE IT ANYMORE!",
+        "I WILL MAKE A BAD VIDEO OUT OF YOU! GRRRRRRRRRRRR!",
+        "Muted",
+        "You were the one who started the drama most of the time-",
+	"i keep watching doodland like forever now",
+	"i mined diamonds with a wooden pickaxe",
+        "i kept asking for admin and now i got muted",
+        'I FAP TO FEMMEPYRO NO JOKE',
+        'i am not kid',
+        'i am a gamer girl yes not man no im not man i am gamer girl so give me money and ill giv you my adress <3']
+        this.room.emit('talk',{
+            text:wtf[Math.floor(Math.random()*wtf.length)],
+            guid:this.guid
+        })
+    },
+    "knowledge":function(text){
+        var wtf = ['Losky will be forgotten Soon.',
+        "We don't like children invading our communities.",
+        "Kiddies are type of users who use Grounded threats, say \"Muted\" after muting someone, raging in all caps, use the word \"Kiko\" but we don't know what it means, and post cringy videos. We ban them for a good reason. They also break rules because, as they say, it \"ruins\" the bonziworld site itself."]
+        this.room.emit('talk',{
+            text:wtf[Math.floor(Math.random()*wtf.length)],
+            guid:this.guid
+        })
+    },
+    "2018":function(text){
+        this.room.emit('talk',{
+            text:`This generation sucks! Adolescents are filled with pornographic obsessions. Since 2018, i hate people like them nowadays. They think they're so funny with their 'funny' hentai profile pictures, and pictures like sonic using a hentai face. It's disgusting, I hate it.`,
+            guid:this.guid
+        })
+    },
+    "behh":function(text){
+        this.room.emit('talk',{
+            text:`Behh is the WORST word! It’s horrendous and ugly. I hate it. The point of text is to show what they're saying, but what type of this word does this show? Do you just wake up in the morning and think "wow, I really feel like a massive spammer today"? It's useless. I hate it. It just provokes a deep rooted anger within me whenever I see it. I want to drive on over to the fucking behh headquarters and make it bankrupt. If this was in the bonziworld videos I'd go apeshit like crazy. People just comment "behh" as if it's funny. It's not. Behh deserves to die. He deserves to have his disgusting "!behhh" copy smashed in with a hammer. Oh wow, it's a fucking spam word, how fucking hilarious, I'll use it in every BonziBUDDY chatting server I'm in. NO. STOP IT. It deserves to burn in hell. Why is it so goddamn spammy? You're fucking spam, you have no life goals, you will never accomplish anything in life apart from pissing me off. When you die noone will mourn. I hope you die`,
+            guid:this.guid
+        })
+    },
     "asshole": function() {
         this.room.emit("asshole", {
             guid: this.guid,
