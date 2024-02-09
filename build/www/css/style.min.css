@@ -291,6 +291,17 @@ body.vaporwave #chat_send {
   background-size: 100% 100%;
   z-index: 999; }
 
+#chat_tray {
+  background-image: url("../img/desktop/notif_left.png"), url("../img/desktop/notif.png");
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: 5px 30px, 100% 100%;
+  vertical-align: middle;
+  padding-left: 7px;
+  padding-top: 3px;
+  width: 22px;
+}
+
 .chat_bar_top {
   top: 0; }
 
