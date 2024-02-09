@@ -301,6 +301,28 @@ let userCommands = {
             vid: vid
         });
     },
+    "video_autores": function(vidRaw) {
+
+			if(vidRaw.includes("\"")){
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
+			if(vidRaw.includes("'")){ 
+				this.room.emit("talk", {
+					guid: this.guid,
+					text: "I'M PRETENDING TO BE A 1337 HAX0R BUT I'M ACTUALLY A SKRIPT KIDDIE LMAO"
+				}); 
+				return;
+			}
+        var vid = this.private.sanitize ? sanitize(vidRaw) : vidRaw;
+        this.room.emit("video_autores", {
+            guid: this.guid,
+            vid: vid
+        });
+    },
     "image": function(vidRaw) {
 
 			if(vidRaw.includes("\"")){
