@@ -1,12 +1,13 @@
+var isChromeApp = false;
 var isMobileApp = false;
 var isApp = false;
-var isDesktop = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(webOS)/i) == null;
+var isDesktop = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)|(android)|(Microsoft Windows)|(Samsung Browser)|(webOS)/i) == null;
 
 var isChromeBrowser = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
 var urlChrome = "https://web.archive.org/web/20200721171418/https://chrome.google.com/webstore/detail/bonziworld/naiglhkfakaaialhnjabkpaiihglgnmk";
 
 var isiOS = navigator.userAgent.match(/(iPad)|(iPhone)|(iPod)/i) != null;
-var urlGPlay = "https://web.archive.org/web/20200721171418/https://play.google.com/store/apps/details?id=com.jojudge.bonziworld";
+var urlGPlay = "https://play.google.com/store/apps/details?id=com.jojudge.bonziworld";
 
 $(function() {
   var support = {
@@ -84,7 +85,10 @@ window.onload = function(){
                     default:{name:"Default",callback:function(){theme('')}},
                     dark:{name:"Dark Mode",callback:function(){theme('#chat_bar{background-image:url("../img/desktop/taskbar_dark.png")}#chat_send{background-image:url("../img/desktop/start_dark.png")}#chat_tray{background-image:url("../img/desktop/notif_left_dark.png"), url("../img/desktop/notif_dark.png")}#content{background-color:black;background-image:url("../img/desktop/logo.png"), url("../img/desktop/bg_dark.png")}')}},
                     acid:{name:"Acid",callback:function(){theme('@keyframes sex{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}canvas{animation:sex 5s linear infinite}')}},
+                    vacid:{name:"Very Acid",callback:function(){theme('@keyframes sex{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}canvas{animation:sex 1s linear infinite}')}},
                     sacid:{name:"Super Acid",callback:function(){theme('@keyframes sex{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}body{animation:sex 1s linear infinite}')}},
+                    eacid:{name:"Extreme Acid",callback:function(){theme('@keyframes sex{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}body{animation:sex 0.5s linear infinite}')}},
+                    macid:{name:"Mega Acid [SEIZURE WARNING]",callback:function(){theme('@keyframes sex{from{filter:hue-rotate(0deg)}to{filter:hue-rotate(360deg)}}body{animation:sex 0.01s linear infinite}')}},
                    terminal:{name:"TERMINAL",callback:function(){theme('.bubble,.bonzi_name,.bubble::after{background:0!important;border:0}*{color:green!important;font-family:monospace!important}#content{background:#000}.bubble-content::before{content:">"}.bonzi_name{padding:0;position:static}.bubble{overflow:visible}.bubble-left{right:0px}input[type=text]{background-color:#000;border:0}#chat_send,#chat_tray{display:none}#chat_bar{background:0}')}},
                 }
             },
@@ -118,7 +122,6 @@ window.onload = function(){
                     behh:{name:"Backflip +swag",callback:function(){socket.emit("command",{list:["backflip","swag"]})}},
                     wtf:{name:"wtf",callback:function(){socket.emit("command",{list:["wtf"]})}},
                     pope:{name:"POPE",disabled:function(){return !admin},callback:function(){socket.emit("command",{list:["pope"]})}},
-                    god:{name:"GOD",disabled:function(){return !admin},callback:function(){socket.emit("command",{list:["god"]})}},
                 }
             }
         }
