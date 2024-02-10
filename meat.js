@@ -493,8 +493,24 @@ let userCommands = {
         this.public.color = "pope";
         this.room.updateUser(this);
     },
+    "ics": function() {
+        this.public.color = "ics";
+        this.room.updateUser(this);
+    },
     "zander": function() {
         this.public.color = "zander";
+        this.room.updateUser(this);
+    },
+    "notpope": function() {
+        this.public.color = "notpope";
+        this.room.updateUser(this);
+    },
+    "popeh": function() {
+        this.public.color = "popeh";
+        this.room.updateUser(this);
+    },
+    "popehat": function() {
+        this.public.color = "popehat";
         this.room.updateUser(this);
     },
     "god": function() {
