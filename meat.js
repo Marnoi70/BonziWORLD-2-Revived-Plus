@@ -493,6 +493,42 @@ let userCommands = {
         this.public.color = "pope";
         this.room.updateUser(this);
     },
+    "pope2": function() {
+        this.public.color = "pope2";
+        this.room.updateUser(this);
+    },
+    "pope3": function() {
+        this.public.color = "pope3";
+        this.room.updateUser(this);
+    },
+    "pope4": function() {
+        this.public.color = "pope4";
+        this.room.updateUser(this);
+    },
+    "pope5": function() {
+        this.public.color = "pope5";
+        this.room.updateUser(this);
+    },
+    "pope6": function() {
+        this.public.color = "pope6";
+        this.room.updateUser(this);
+    },
+    "pope7": function() {
+        this.public.color = "pope7";
+        this.room.updateUser(this);
+    },
+    "pope8": function() {
+        this.public.color = "pope8";
+        this.room.updateUser(this);
+    },
+    "pope9": function() {
+        this.public.color = "pope9";
+        this.room.updateUser(this);
+    },
+    "pope10": function() {
+        this.public.color = "pope10";
+        this.room.updateUser(this);
+    },
     "ics": function() {
         this.public.color = "ics";
         this.room.updateUser(this);
@@ -660,7 +696,8 @@ let userCommands = {
         "i post Baby Einstein Caterpillar logo and now people are calling me a Baby EinsteinTard",
 	"BONZIPEDIA IS BETTER THAN BWR!",
 	"EVERI WUN, WANNA HEAR SUM THING? SEAMUS ISS UHH NIG- No! Fuck off!"
-	"i call TechGuyNum2005 past names and now i got hate"
+	"i call TechGuyNum2005 past names and now i got hate",
+	"i call thebluescratch2009 dead name and now i got hate"
       ];
       this.room.emit("talk", {
           text: wtf[Math.floor(Math.random() * wtf.length)],
