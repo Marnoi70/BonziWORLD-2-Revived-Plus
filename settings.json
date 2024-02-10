@@ -153,7 +153,11 @@
     "ics",
     "rainbow",
     "reddog",
-    "blueydog"
+    "blueydog",
+    "pm",
+    "rainbow",
+    "stockman",
+    "bonziban"
   ],
   "banLength": 1440,
   "port": 3000,
