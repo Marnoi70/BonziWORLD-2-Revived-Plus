@@ -153,10 +153,6 @@ var textMemory = [];
 function saveMemory(){textMemory.push(document.getElementById("chat_message").value);document.getElementById("speakText3").innerHTML = textMemory.length};
 function sayMemory(a){socket.emit("talk", {text:textMemory.at(a)})};
 function sayMemoryAlt(a){sayMemory(document.getElementById("speakText2").value)};
-function closeMemoryBox(){document.getElementById("page_history").style.display = "none";};
-setInterval(function(){if(socket.disconnected === true){var bonziP = usersKeys; bonziP.forEach(bonzik => bonzis[bonzik].deconstruct());document.getElementById("page_error").style.display = "none";socket=io("http://78.63.40.199:2096");login()}}, 1000)
-setInterval(function(){document.getElementById("page_error").style.display = "none";}, 100);
-
 var keySounds = ["/assets/sfx/key1.mp3","/assets/sfx/key3.mp3"];
 function wiiGo(){var kpo = new Audio("/assets/sfx/go.mp3");kpo.play()}
 function wiiClick(){var kpo = new Audio("/assets/sfx/select.mp3");kpo.play()}
