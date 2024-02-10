@@ -695,7 +695,7 @@ let userCommands = {
         "i post baby einstein and now people are calling me a Baby EinsteinTard",
         "i post Baby Einstein Caterpillar logo and now people are calling me a Baby EinsteinTard",
 	"BONZIPEDIA IS BETTER THAN BWR!",
-	"EVERI WUN, WANNA HEAR SUM THING? SEAMUS ISS UHH NIG- No! Fuck off!"
+	"EVERI WUN, WANNA HEAR SUM THING? SEAMUS ISS UHH NIG- No! Fuck off!",
 	"i call TechGuyNum2005 past names and now i got hate",
 	"i call thebluescratch2009 dead name and now i got hate"
       ];
