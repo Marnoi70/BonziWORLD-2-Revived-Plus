@@ -598,36 +598,24 @@ let userCommands = {
         this.public.name = this.private.sanitize ? sanitize(name+"",settingsSantize) : name;
         this.room.updateUser(this);
     },
-    "pitch": function(pitch) {
-        pitch = parseInt(pitch);
+  pitch: function (pitch) {
+      pitch = parseInt(pitch);
 
-        if (isNaN(pitch)) return;
+      if (isNaN(pitch)) return;
 
-        this.public.pitch = Math.max(
-            Math.min(
-                parseInt(pitch),
-                this.room.prefs.pitch.max
-            ),
-            this.room.prefs.pitch.min
-        );
+      this.public.pitch = pitch;
 
-        this.room.updateUser(this);
-    },
-    "speed": function(speed) {
-        speed = parseInt(speed);
+      this.room.updateUser(this);
+  },
+  speed: function (speed) {
+      speed = parseInt(speed);
 
-        if (isNaN(speed)) return;
+      if (isNaN(speed)) return;
 
-        this.public.speed = Math.max(
-            Math.min(
-                parseInt(speed),
-                this.room.prefs.speed.max
-            ),
-            this.room.prefs.speed.min
-        );
+      this.public.speed = speed;
 
-        this.room.updateUser(this);
-    }
+      this.room.updateUser(this);
+  }
 };
 
 
