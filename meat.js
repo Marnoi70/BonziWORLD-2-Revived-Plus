@@ -463,6 +463,10 @@ let userCommands = {
         this.public.color = "pope";
         this.room.updateUser(this);
     },
+    "zander": function() {
+        this.public.color = "zander";
+        this.room.updateUser(this);
+    },
     "wtf":function(text){
         var wtf = 
         ['i cut a hole in my computer so i can fuck it',
